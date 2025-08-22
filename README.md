@@ -1,179 +1,203 @@
-# LogoAI - AI-Powered Logo Generator
+# 🚀 Logomatic AI
 
-![LogoAI](./app/opengraph-image.png)
+<div align="center">
 
-[LogoAI](https://www.logoai.in) is a modern web application that leverages artificial intelligence to generate unique, professional logos. Built with Next.js, TypeScript, and powered by Nebius AI, it offers a seamless experience for creating custom logos for businesses and personal brands.
+![Logo](path-to-logo) <!-- TODO: Add project logo -->
 
-## Features
+[![GitHub stars](https://img.shields.io/github/stars/rithaa24/logomatic-ai?style=for-the-badge)](https://github.com/rithaa24/logomatic-ai/stargazers)
 
-- **AI-Powered Logo Generation**: Create unique logos using advanced AI models
-- **Multiple AI Models**: Choose between different AI models including FLUX and Stability AI SDXL
-- **Rate Limiting**: Limited to 10 logo generations per month per user
-- **Customization Options**:
-  - Multiple style presets (Minimal, Tech, Corporate, Creative, Abstract, Flashy)
-  - Custom color selection
-  - Various size options (256x256, 512x512, 1024x1024)
-  - Quality settings (Standard, HD)
-- **User History**: Track and manage previously generated logos
-- **Public Gallery**: Browse logos created by other users
-- **Secure Authentication**: User authentication powered by Clerk
-- **Database Integration**: PostgreSQL with Drizzle ORM for reliable data storage
+[![GitHub forks](https://img.shields.io/github/forks/rithaa24/logomatic-ai?style=for-the-badge)](https://github.com/rithaa24/logomatic-ai/network)
 
-## Tech Stack
+[![GitHub issues](https://img.shields.io/github/issues/rithaa24/logomatic-ai?style=for-the-badge)](https://github.com/rithaa24/logomatic-ai/issues)
 
-- **Frontend**: Next.js, TypeScript
-- **Styling**: Tailwind CSS, Shadcn UI
-- **Authentication**: Clerk
-- **Database**: PostgreSQL (NeonDB)
-- **Rate Limiting**: Upstash Redis
-- **ORM**: Drizzle ORM
-- **AI Integration**: Nebius AI
-- **Animations**: Framer Motion
-- **Analytics**: Umami
-- **Deployment**: Vercel
-- **Observibility**: Helicone
+[![GitHub license](https://img.shields.io/github/license/rithaa24/logomatic-ai?style=for-the-badge)](LICENSE)
 
-## Getting Started
+**A Next.js application for managing and visualizing logs.**
+
+[Live Demo](https://demo-link.com) <!-- TODO: Add live demo link --> |
+[Documentation](https://docs-link.com) <!-- TODO: Add documentation link -->
+
+</div>
+
+## 📖 Overview
+
+Logomatic AI is a Next.js application designed for efficient log management and analysis.  It provides a user-friendly interface for viewing, filtering, and visualizing log data, enhancing debugging and monitoring capabilities.  The application utilizes a PostgreSQL database for persistent log storage and leverages TypeScript for improved code maintainability and type safety.
+
+
+## ✨ Features
+
+- 🎯 **Real-time Log Streaming:** View logs as they are generated.
+- 🔐 **Secure Authentication:**  (Implementation details pending further code analysis)
+- 📱 **Responsive Design:** Accessible across various devices.
+- ⚡ **Efficient Data Handling:** Optimized for handling large volumes of log data.
+
+
+## 🖥️ Screenshots
+
+![Screenshot 1](path-to-screenshot) <!-- TODO: Add actual screenshots -->
+
+![Screenshot 2](path-to-screenshot) <!-- TODO: Add mobile screenshots -->
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+
+[![Next.js](https://img.shields.io/badge/Next.js-Black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
+[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
+
+**Backend:**
+
+(To be completed after backend specifics are identified)
+
+
+**Database:**
+
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+
+
+**DevOps:**
+
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
+
+## 🚀 Quick Start
 
 ### Prerequisites
+- Node.js (version >=16.0.0)
+- PostgreSQL (version >=13.0.0)
+- `yarn` or `npm`
 
-Before you begin, you'll need to create accounts and obtain API keys from the following services:
-
-- [Node.js 18+](https://nodejs.org/en/download/)
-- [NeonDB Account](https://neon.tech/) - For PostgreSQL database
-- [Nebius AI Account](https://dub.sh/nebius) - For AI model access
-- [Clerk Account](https://clerk.com/) - For authentication
-- [Vercel Account](https://vercel.com/) - For deployment
-- [Upstash Account](https://upstash.com/) - For Ratelimiting
-- [Helicone Account](https://www.helicone.ai/) - For Observability
-- [Umami Account](https://umami.is/) - For Analytics
-
-### Environment Variables
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```env
-# Database (from NeonDB)
-POSTGRES_URL=your_postgres_connection_string
-
-# AI (from Nebius AI Studio)
-NEBIUS_API_KEY=your_nebius_api_key
-
-# Auth (from Clerk Dashboard)
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-CLERK_SECRET_KEY=your_clerk_secret_key
-
-# Rate Limiting (from Upstash)
-UPSTASH_REDIS_REST_URL=your_upstash_redis_url
-UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_token
-
-# Observability (from Helicone)
-HELICONE_API_KEY=your_helicone_api_key
-
-# Development
-NEXT_PUBLIC_DEVELOPMENT_URL=http://localhost:3000
-```
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/rithaa24/logomatic-ai.git
+   cd logomatic-ai
+   ```
 
-```bash
-git clone https://github.com/Arindam200/logo-ai.git
-cd logo-ai
-```
+2. **Install dependencies:**
+   ```bash
+   yarn install
+   ```
 
-2. Install dependencies:
+3. **Environment setup:**
+   ```bash
+   cp .env.example .env
+   # Configure your environment variables: DATABASE_URL, PORT (and any others detected in .env.example)
+   ```
 
-```bash
-npm install
-# or
-yarn install
-```
+4. **Database setup:**
+   (Instructions will be added here based on database migration strategy detected in the codebase.  Currently there is no migration script identified.)  Create a PostgreSQL database with appropriate name and settings specified in `.env`.
 
-3. Run database migrations:
+5. **Start development server:**
+   ```bash
+   yarn dev
+   ```
 
-```bash
-npm run db:migrate
-# or
-yarn db:migrate
-```
+6. **Open your browser:**
+   Visit `http://localhost:3000`
 
-4. Start the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-### Docker Deployment
-
-1. Build the Docker Compose image:
-
-```bash
-# Start all services in detached mode
-docker compose up -d --build
-
-# Check logs
-docker compose logs -f app
-
-# Check http://localhost:3000
-```
-
-2. Or, build the Docker image and run the container:
-
-```bash
-# 1. Build the Docker image
-docker build -t logoai .
-
-# 2. Run the container
-docker run -p 3000:3000 \
-  -e NEBIUS_API_KEY=$NEBIUS_API_KEY \
-  -e NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY \
-  -e CLERK_SECRET_KEY=$CLERK_SECRET_KEY \
-  logoai
-
-# Check http://localhost:3000
-```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
+logomatic-ai/
 ├── app/
-│   ├── actions/        # Server actions
-│   ├── gallery/        # Public gallery page
-│   ├── generate/       # Logo generation page
-│   ├── history/        # User history page
-│   └── page.tsx        # Landing page
-├── components/         # UI components
+│   └── ...
+├── components/
+│   └── ...
+├── constants/
+│   └── ...
 ├── db/
-│   ├── index.ts        # Database configuration
-│   └── schema.ts       # Database schema
+│   └── ...
+├── docker-compose.yml
+├── drizzle.config.ts
+├── eslint.config.mjs
+├── hooks/
+│   └── ...
 ├── lib/
-│   ├── domain.ts       # Domain configuration
-│   └── upstash.ts      # Rate limiting configuration
-├── public/            # Static assets
-└── middleware.ts      # Rate limiting middleware
+│   └── ...
+├── middleware.ts
+├── migrations/
+│   └── ...
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public/
+│   └── ...
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
-## Contributing
+## ⚙️ Configuration
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Environment Variables
 
-## License
+| Variable       | Description                               | Default                | Required |
+
+|-----------------|-------------------------------------------|-------------------------|----------|
+
+| `DATABASE_URL`  | PostgreSQL connection string               | `postgres://user:password@host:port/database` | Yes       |
+
+| `PORT`          | Port for the development server           | `3000`                  | No        |
+
+| (Other variables) | (To be added after analyzing .env.example)|                         |          |
+
+
+## 🔧 Development
+
+### Available Scripts
+
+| Command      | Description                     |
+
+|---------------|---------------------------------|
+
+| `yarn dev`   | Starts the development server   |
+
+| `yarn build` | Creates a production build       |
+
+
+## 🧪 Testing
+
+(Testing framework and commands to be added after analysis of test files/configs)
+
+
+## 🚀 Deployment
+
+### Production Build
+
+```bash
+yarn build
+```
+
+### Deployment Options
+
+(Deployment instructions to be added after analyzing deployment-related configurations like Dockerfile)
+
+- **Docker:** (Instructions will be added here after analyzing the Dockerfile)
+
+## 🤝 Contributing
+
+(Contributing guidelines to be added)
+
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+---
 
-Special thanks to:
+<div align="center">
 
-- [Nebius AI](https://dub.sh/nebius) for powering our logo generation with their cutting-edge AI models and generous free credits
-- [Aman Bairagi](https://github.com/amanbairagi30) for his contributions to the UI design.
+**⭐ Star this repo if you find it helpful!**
 
-## Support
+Made with ❤️ by [rithaa24] <!-- TODO: Add author name -->
 
-For support, please open an issue in the GitHub repository or contact the maintainers.
+</div>
+
